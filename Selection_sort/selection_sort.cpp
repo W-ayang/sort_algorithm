@@ -37,12 +37,7 @@ int main()
     int arr[] = {1  ,3,  5  ,7,  9  ,6,  3  ,2,  8  ,0,};
     int len = sizeof(arr)/sizeof(*arr);
     print(arr,len);
-    //selection_sort(arr,len);
-    //insertion_sort(arr,len);
-    //shell_sort(arr,len);
-    //Merge_sort(arr,len);
-    //insertion_sortPro(arr,len);
-    //shell_sortPro(arr,len);
+    selection_sort(arr,len);
     print(arr,len);
     return 0;
 }
