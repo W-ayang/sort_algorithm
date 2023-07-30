@@ -22,8 +22,8 @@ void Merge(int *arr, int *tempArr, int left, int mid, int right){
     while(l_pos <= mid) tempArr[pos++] = arr[l_pos++];
     while(r_pos <= right) tempArr[pos++] = arr[r_pos++];
     while(left <= right){
-        arr[left] = tempArr[left];
-        left++;
+         arr[left] = tempArr[left];
+         left++;
     }
 }
 
@@ -42,6 +42,8 @@ void Merge_sort(int *arr, int len){
     if(tempArr){
         msort(arr, tempArr, 0, len - 1);
         free(tempArr);
+    }else{
+        cout<<"error : failed to allocate memory !"<<endl;
     }
 }
 
