@@ -17,6 +17,19 @@ void print(int *a,int len){
     cout<<endl;
 }
 
+//希尔排序
+void shell_sort(int *arr,int len){
+    int i,j,inc,key;
+    for(inc = len / 2; inc > 0; inc /= 2){
+        for(i = inc; i < len; i++){
+            key = arr[i];
+            for(j = i - inc; (j > -1) && (key < arr[j]); j -= inc)
+                arr[j + inc] = arr[j];
+            arr[j + inc] = key;
+        }
+    }
+} 
+
 //挖坑填数
 int DigHoleSort(int* arr, int low, int high){
     int pivot = arr[low];
@@ -33,9 +46,14 @@ int DigHoleSort(int* arr, int low, int high){
 void quick_sort(int* arr, int low, int high)
 {
 	if (low >= high) return;
-	int mid = DigHoleSort(arr, low, high);
-	quick_sort(arr, low, mid - 1);
-	quick_sort(arr, mid + 1, high);
+    if((high - low) > 20){ //小区间优化法 当数据量比较大的时候可以通过调整参数(20),来减小递归次数，提高性能
+        int mid = DigHoleSort(arr, low, high);
+        quick_sort(arr, low, mid - 1);
+        quick_sort(arr, mid + 1, high);
+    }else{
+        shell_sort(arr, high + 1); //数量比较少的时候用直接插入来排序
+    }
+	
 }
 
 
