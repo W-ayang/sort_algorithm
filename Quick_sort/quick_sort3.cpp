@@ -51,7 +51,7 @@ void quick_sort(int* arr, int low, int high)
         quick_sort(arr, low, mid - 1);
         quick_sort(arr, mid + 1, high);
     }else{
-        shell_sort(arr, high + 1); //数量比较少的时候用直接插入来排序
+        shell_sort(arr, high + 1); //数量比较少的时候使用希尔排序
     }
 	
 }
