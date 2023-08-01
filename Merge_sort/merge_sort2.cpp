@@ -10,9 +10,7 @@ void print(int *a,int len){
     }
     cout<<endl;
 }
-void hah(){
-    
-}
+
 //归并排序
 void msort(int *arr, int *tmp, int left, int right){
     if(left >= right) return;
